@@ -2,6 +2,36 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Solution22",
+            "request": "launch",
+            "mainClass": "Solution22"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SolutionQuickSort",
+            "request": "launch",
+            "mainClass": "SolutionQuickSort"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SolutionTest",
+            "request": "launch",
+            "mainClass": "SolutionTest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Solution2",
+            "request": "launch",
+            "mainClass": "Solution2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Solution",
+            "request": "launch",
+            "mainClass": "Solution"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LRUCache",
             "request": "launch",
             "mainClass": "LRUCache"

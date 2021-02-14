@@ -10,17 +10,16 @@ class LRUCache {
     // list是按照优先级顺序排序的，优先级高的在list末尾
     LinkedList<Integer> list;
     HashMap<Integer, Integer> map;
-    int cap = 0;
+    int cap;
 
     public LRUCache(int capacity) {
-        list = new LinkedList();
+        list = new LinkedList<>();
         map = new HashMap<>();
         cap = capacity;
     }
 
     // 每次get完数据，需要提升这个数据的优先级别
     public int get(int key) {
-        int size = list.size();
         if (list.contains(key)) {
             // 提升这个key的优先级别
             list.remove(list.indexOf(key));
@@ -33,13 +32,14 @@ class LRUCache {
     // 每次put数据，先判断是不是队列满了
     public void put(int key, int value) {
         int size = list.size();
-        System.out.println(size);
-        System.out.println(cap);
-        if (size == capacity && capacity != 0) {
+        if (size == cap && cap != 0) {
             // 移除优先级最低的元素
-            System.out.println(size);
-            System.out.println(capacity);
-            list.removeFirst();
+            // 如果包含这个key,不需要移除元素，更新这个元素的map，提高这个元素list里的优先级就可以了
+            if (list.contains(key)) {
+                list.remove(list.indexOf(key));
+            } else {
+                list.removeFirst();
+            }
         }
         list.add(key);
         map.put(key, value);
